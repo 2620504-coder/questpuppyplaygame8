@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>퍼피 라이프</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="naming-modal" class="modal-overlay hidden">
+        <div class="neon-box">
+            <h1 class="neon-text">새로운 가족을 맞이할 준비</h1>
+            <p>강아지에게 예쁜 이름을 지어주세요.</p>
+            <input type="text" id="puppy-name-input" placeholder="강아지 이름 입력">
+            <button class="neon-btn" onclick="startGame()">입양하기</button>
+        </div>
+    </div>
+
+    <div id="death-modal" class="modal-overlay hidden death-screen">
+        <h1 class="death-text">강아지가 무지개 다리를 건넜습니다...</h1>
+        <p class="death-sub">배고픔이나 행복도를 돌보지 않아 곁을 떠났습니다.</p>
+        <button class="neon-btn red" onclick="resetGame()">처음부터 다시 시작하기</button>
+    </div>
+
+    <div class="game-container hidden" id="main-game">
+        <div id="toast" class="toast">알림 메시지</div>
+
+        <header class="puppy-section">
+            <div class="status-bar">
+                <span id="display-name" class="puppy-name"></span> (Lv.<span id="level">1</span>)
+            </div>
+            <div class="vital-stats">
+                <div class="vital-box">🍖 배고픔: <span id="hunger">100</span>%</div>
+                <div class="vital-box">💖 행복도: <span id="happiness">100</span>%</div>
+            </div>
+            
+            <div class="puppy-container">
+                <div id="puppy-box" class="puppy-box">
+                    <img src="" alt="강아지 사진" id="puppy-img">
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">EXP: <span id="exp">0</span> / 100</div>
+                <div class="stat-box">Gold: <span id="gold">0</span> G</div>
+            </div>
+        </header>
+
+        <main class="content">
+            <section id="quest-tab" class="tab-content active">
+                <div class="section-header">
+                    <h2>오늘의 할 일</h2>
+                    <span class="quest-desc">완료 시: +58 EXP, +100 G</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="quest-input" placeholder="새로운 퀘스트를 적어주세요">
+                    <button onclick="addQuest()">등록</button>
+                </div>
+                <ul id="quest-list"></ul>
+            </section>
+        </main>
+
+        <nav class="bottom-menu">
+            <button class="tab-btn active" onclick="location.href='index.html'">
+                <span class="icon">🏠</span><span>홈(퀘스트)</span>
+            </button>
+            <button class="tab-btn" onclick="location.href='shop.html'">
+                <span class="icon">🛒</span><span>상점</span>
+            </button>
+            <button class="tab-btn" onclick="hardResetGame()">
+                <span class="icon">⚙️</span><span>초기화</span>
+            </button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

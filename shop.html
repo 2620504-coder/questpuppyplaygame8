@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>퍼피 라이프 - 상점</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="toast" class="toast">알림 메시지</div>
+
+        <header class="shop-header">
+            <h1>퍼피 상점</h1>
+            <div class="gold-box">보유 골드: <span id="current-gold">0</span> G</div>
+            <div class="vital-stats">
+                <span>🍖 배고픔: <span id="current-hunger">100</span>%</span>
+                <span>💖 행복도: <span id="current-happiness">100</span>%</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <h2 class="category-title">🍖 음식 상점 (배고픔 회복)</h2>
+            <ul class="shop-list">
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">바삭바삭 개껌</span>
+                        <span class="item-desc">배고픔 +5%</span>
+                    </div>
+                    <button class="buy-btn" onclick="buyItem('food', 30, 5)">30 G</button>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">영양만점 수제사료</span>
+                        <span class="item-desc">배고픔 +20%</span>
+                    </div>
+                    <button class="buy-btn" onclick="buyItem('food', 100, 20)">100 G</button>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">최고급 한우 스테이크</span>
+                        <span class="item-desc">배고픔 +88%</span>
+                    </div>
+                    <button class="buy-btn premium" onclick="buyItem('food', 330, 88)">330 G</button>
+                </li>
+            </ul>
+
+            <h2 class="category-title mt-4">🎾 애완 용품 상점 (행복도 회복)</h2>
+            <ul class="shop-list">
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">부드러운 빗</span>
+                        <span class="item-desc">행복도 +5%</span>
+                    </div>
+                    <button class="buy-btn" onclick="buyItem('supply', 30, 5)">30 G</button>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">삑삑이 장난감</span>
+                        <span class="item-desc">행복도 +23%</span>
+                    </div>
+                    <button class="buy-btn" onclick="buyItem('supply', 100, 23)">100 G</button>
+                </li>
+                <li>
+                    <div class="item-info">
+                        <span class="item-name">초대형 강아지 놀이터</span>
+                        <span class="item-desc">행복도 +100%</span>
+                    </div>
+                    <button class="buy-btn premium" onclick="buyItem('supply', 330, 100)">330 G</button>
+                </li>
+            </ul>
+        </main>
+
+        <nav class="bottom-menu">
+            <button class="tab-btn" onclick="location.href='index.html'">
+                <span class="icon">🏠</span><span>홈(퀘스트)</span>
+            </button>
+            <button class="tab-btn active" onclick="location.href='shop.html'">
+                <span class="icon">🛒</span><span>상점</span>
+            </button>
+            <button class="tab-btn" onclick="hardResetGame()">
+                <span class="icon">⚙️</span><span>초기화</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="shop.js"></script>
+</body>
+</html>
